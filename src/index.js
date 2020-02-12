@@ -7,10 +7,12 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import { createLogger } from "redux-logger";
 import thunk from "redux-thunk";
 import { message } from "./reducers/message";
+import { routing } from "./reducers/routing";
 import App from "./components/App";
 
 const reducers = combineReducers({
-  message
+  message,
+  routing
 });
 const middleware = [thunk];
 
