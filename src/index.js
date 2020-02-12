@@ -7,7 +7,7 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import { createLogger } from "redux-logger";
 import thunk from "redux-thunk";
 import { message } from "./reducers/message";
-import App from "./App";
+import App from "./components/App";
 
 const reducers = combineReducers({
   message
