@@ -28,7 +28,7 @@ export const message = (
       newState.data = action.data;
       return newState;
     case MESSAGE_CREATE_REQUEST_SUCCEEDED:
-      newState.data.push(action.data);
+      newState.data = action.data;
       return newState;
     case MESSAGE_DELETE_REQUEST_SUCCEEDED:
       newState.data = newState.data.filter(item => item.id !== action.data);

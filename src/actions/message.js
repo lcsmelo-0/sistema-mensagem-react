@@ -1,6 +1,4 @@
 import {
-  messageCreateRequest,
-  messageCreateRequestFailed,
   messageCreateRequestSucceeded,
   messageDeleteRequest,
   messageDeleteRequestFailed,
@@ -9,11 +7,7 @@ import {
   messageRequestFailed,
   messageRequestSucceeded
 } from "./action-creators/message";
-import {
-  apiMessageDelete,
-  apiMessageRegister,
-  apiMessageRequest
-} from "../api/message";
+import { apiMessageDelete, apiMessageRequest } from "../api/message";
 import { error } from "./error";
 
 const createMessageRequest = () => dispatch => {
@@ -32,16 +26,7 @@ const createMessageRequest = () => dispatch => {
 export const getMessages = () => dispatch => dispatch(createMessageRequest());
 
 const createMessageRegisterRequest = payload => dispatch => {
-  dispatch(messageCreateRequest());
-  return apiMessageRegister(payload)
-    .then(json => {
-      dispatch(messageCreateRequestSucceeded(json));
-      return Promise.resolve();
-    })
-    .catch(json => {
-      dispatch(error(json, messageCreateRequestFailed));
-      return Promise.reject();
-    });
+  dispatch(messageCreateRequestSucceeded(payload));
 };
 
 export const createMessage = payload => dispatch =>
