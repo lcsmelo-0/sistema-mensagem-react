@@ -1,0 +1,7 @@
+.SelectComponent {
+  width: 100%;
+
+  & > .MuiInputBase-root {
+    width: 100%;
+  }
+}
